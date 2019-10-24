@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>2019-10-24-TIL - Bart&#39;s Tech Blog</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="2019-10-24-TIL" />
+<meta property="og:description" content="L4 Mode  L4에는 2가지 모드가 존재한다. Proxy 모드와 DSR(Direct Server Return) 모드로 나눌 수 있다. [출처] https://image.toast.com/aaaadh/alpha/2018/techblog/1%2817%29.png  Proxy Mode  Server에서 Client로 응답시 L4를 경유하여 응답하는 구조 Client → L4 → Server → L4 → Client
+장점 같은 서브넷이 아닌 다른 IP대역이더라도 L4수용이 가능함
+ 하나의 포트에 여러가지 리얼 포트로 전달해 줄 수 있는 멀티 포트 기능 지원 가능함
+단점 모든 트래픽이 L4를 경유하기 때문에 인터페이스 병목현상 및 장비에 부하를 줄 수 있음" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://bart2001.github.io/posts/2019-10-24-til/" />
+<meta property="article:published_time" content="2019-10-24T22:21:47+09:00" />
+<meta property="article:modified_time" content="2019-10-24T22:21:47+09:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="2019-10-24-TIL"/>
+<meta name="twitter:description" content="L4 Mode  L4에는 2가지 모드가 존재한다. Proxy 모드와 DSR(Direct Server Return) 모드로 나눌 수 있다. [출처] https://image.toast.com/aaaadh/alpha/2018/techblog/1%2817%29.png  Proxy Mode  Server에서 Client로 응답시 L4를 경유하여 응답하는 구조 Client → L4 → Server → L4 → Client
+장점 같은 서브넷이 아닌 다른 IP대역이더라도 L4수용이 가능함
+ 하나의 포트에 여러가지 리얼 포트로 전달해 줄 수 있는 멀티 포트 기능 지원 가능함
+단점 모든 트래픽이 L4를 경유하기 때문에 인터페이스 병목현상 및 장비에 부하를 줄 수 있음"/>
+<link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,300italic,400italic|Raleway:200,300" rel="stylesheet">
+
+	<link rel="stylesheet" type="text/css" media="screen" href="https://bart2001.github.iocss/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://bart2001.github.iocss/main.css" />
+	<link rel="stylesheet" type="text/css" href="https://bart2001.github.iocss/custom.css" />
+	
+
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="https://bart2001.github.iojs/main.js"></script>
+	<script src="https://bart2001.github.iojs/abc.js"></script>
+	<script src="https://bart2001.github.iojs/xyz.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper post">
+		<div class="header">
+	<h1 class="site-title"><a href="/">Bart&#39;s Tech Blog</a></h1>
+	<div class="site-description"><h2>Developer, DevOps</h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/bart2001" title="Github"><i data-feather="github"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post-header">
+			<h1 class="title">2019-10-24-TIL</h1>
+			<div class="meta">Posted at &mdash; Oct 24, 2019</div>
+		</div>
+
+		<div class="markdown">
+			
+
+<h1 id="l4-mode">L4 Mode</h1>
+
+<ul>
+<li>L4에는 2가지 모드가 존재한다.</li>
+<li>Proxy 모드와 DSR(Direct Server Return) 모드로 나눌 수 있다.
+<img src="https://image.toast.com/aaaadh/alpha/2018/techblog/1%2817%29.png" alt="proxy_mode" />
+<br>[출처] <a href="https://image.toast.com/aaaadh/alpha/2018/techblog/1%2817%29.png">https://image.toast.com/aaaadh/alpha/2018/techblog/1%2817%29.png</a></li>
+</ul>
+
+<h2 id="proxy-mode">Proxy Mode</h2>
+
+<ul>
+<li>Server에서 Client로 응답시 L4를 경유하여 응답하는 구조</li>
+
+<li><p>Client → L4 → Server → L4 → Client</p>
+
+<h3 id="장점">장점</h3></li>
+
+<li><p>같은 서브넷이 아닌 다른 IP대역이더라도 L4수용이 가능함</p></li>
+
+<li><p>하나의 포트에 여러가지 리얼 포트로 전달해 줄 수 있는 멀티 포트 기능 지원 가능함</p>
+
+<h3 id="단점">단점</h3></li>
+
+<li><p>모든 트래픽이 L4를 경유하기 때문에 인터페이스 병목현상 및 장비에 부하를 줄 수 있음</p></li>
+
+<li><p>Client IP를 전달하기 위해서는 L4에서 HTTP헤더 값을 추가하고 관련 가이드에 따른 AP 수정으로 지원 가능함 (HTTP/SSL프로토콜만 지원 가능함)</p></li>
+</ul>
+
+<h2 id="dsr-mode">DSR Mode</h2>
+
+<ul>
+<li>서버에서 클라이언트로 응답시 L4를 경유하지 않고 Direct 로 응답하는 구조</li>
+
+<li><p>Client &gt; L4 &gt; Server &gt; Client</p>
+
+<h3 id="장점-1">장점</h3></li>
+
+<li><p>L4를 경유하지 않고 Client로 바로 응답하여 L4장비 부하를 줄여 줌, 응답속도가 더 빠름</p></li>
+
+<li><p>Client IP를 그대로 전달하여 서버에 로그를 남기거나 접근 제어를 할 수 있음</p>
+
+<h3 id="단점-1">단점</h3></li>
+
+<li><p>같은 서브넷 안에 있는 서버(IP) 대역이 아닐 경우 L4수용이 어려움</p></li>
+
+<li><p>하나의 포트에서 여러가지의 리얼 포트로 전달해 줄 수 있는 멀티포트 기능지원이 어려움</p></li>
+</ul>
+
+<p>[출처] <a href="https://ktdsoss.tistory.com/m/270">https://ktdsoss.tistory.com/m/270</a></p>
+
+		</div>
+
+		<div class="post-tags">
+			
+				
+			
+		</div></div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright notice |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-123-45', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+<script>feather.replace()</script>
+</body>
+</html>
